@@ -17,10 +17,21 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-
   </head>
 
-  <body data-sveltekit-preload-data="hover">
+  <body
+    data-sveltekit-preload-data="hover"
+    class="bg-Crust text-white relative"
+  >
     <div style="display: contents">%sveltekit.body%</div>
+    <div class="absolute min-h-screen inset-0 w-full z-[-1] opacity-70">
+      <div class="absolute inset-0" id="particles-js" />
+    </div>
+    <script src="src/lib/particles_js/particles.js"></script>
+    <script>
+      particlesJS.load("particles-js", "particles_js/particles.json", () => {
+        console.log("[Dependencies]: Particles.js config loaded");
+      });
+    </script>
   </body>
 </html>
