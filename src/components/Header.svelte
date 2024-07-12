@@ -26,14 +26,23 @@
     </div>
   </div>
   <div class="flex gap-8 items-center">
-    <a href="" class="leading-none hidden sm:inline">
-      <ion-icon name="logo-github" class="text-4xl"></ion-icon>
-    </a>
-    <a href="ad" class="leading-none hidden sm:inline">
-      <ion-icon name="logo-linkedin" class="text-4xl"></ion-icon>
+    <a
+      href="https://github.com/cielaton"
+      target="_blank"
+      class="hidden sm:inline"
+    >
+      <i class="ri-github-fill text-4xl"></i>
     </a>
     <a
-      href="asd"
+      href="https://www.linkedin.com/in/v%C3%B5-tu%E1%BA%A5n-ki%E1%BB%87t-16311a290/"
+      target="_blank"
+      class="hidden sm:inline"
+    >
+      <i class="ri-linkedin-box-fill text-4xl"></i>
+    </a>
+    <a
+      href="vtuankiet17@gmail.com"
+      target="_blank"
       class="relative px-5 py-2 group rounded-lg bg-white overflow-hidden"
     >
       <h4 class="relative text-Base font-medium z-[1]">Get in touch</h4>
