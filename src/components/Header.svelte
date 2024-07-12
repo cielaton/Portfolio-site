@@ -7,7 +7,6 @@
     { name: "Projects", link: "" },
     { name: "About me", link: "" },
   ];
-
 </script>
 
 <header
@@ -26,8 +25,21 @@
       {/each}
     </div>
   </div>
-  <a href="" class="relative px-5 py-2 group rounded-lg bg-white overflow-hidden">
-    <h4 class="relative text-Base font-medium z-[1]">Get in touch</h4>
-    <div class="absolute top-0 right-full w-full h-full bg-Text group-hover:translate-x-full z-0 duration-200"></div>
-  </a>
+  <div class="flex gap-8 items-center">
+    <a href="" class="leading-none hidden sm:inline">
+      <ion-icon name="logo-github" class="text-4xl"></ion-icon>
+    </a>
+    <a href="ad" class="leading-none hidden sm:inline">
+      <ion-icon name="logo-linkedin" class="text-4xl"></ion-icon>
+    </a>
+    <a
+      href="asd"
+      class="relative px-5 py-2 group rounded-lg bg-white overflow-hidden"
+    >
+      <h4 class="relative text-Base font-medium z-[1]">Get in touch</h4>
+      <div
+        class="absolute top-0 right-full w-full h-full bg-Text group-hover:translate-x-full z-0 duration-200"
+      ></div>
+    </a>
+  </div>
 </header>
