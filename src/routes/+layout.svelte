@@ -13,7 +13,7 @@
 </script>
 
 <div class="relative flex flex-col w-full min-h-screen">
-  <Header />
+  <Header {scrollY} />
   <slot />
   <Footer />
 </div>
