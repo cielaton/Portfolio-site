@@ -17,20 +17,21 @@
         achieve an Engineering degree in Embedded Systems and IoT, along with being
         a GNU/Linux enthusiast.
       </p>
-      <div class="flex mr-auto ml-auto lg:mr-auto lg:ml-0">
+      <div class="flex mr-auto ml-auto lg:mr-auto lg:ml-0 text-Base text-base sm:text-lg md:text-xl font-medium gap-4">
         <a
           href="https://www.fiverr.com/kisto1073"
           target="_blank"
-          class="relative flex overflow-hidden px-6 py-3 group rounded-lg bg-white text-Base text-base sm:text-lg md:text-xl"
+          class="relative flex overflow-hidden px-6 py-3 group rounded-lg bg-white"
         >
-          <h4 class="relative text-Base font-medium z-[1]">Fiverr's gigs</h4>
-          <i class="ri-external-link-fill font-medium z-[1] ml-2"> </i>
+          <h4 class="relative  z-[1]">Fiverr's gigs</h4>
+          <i class="ri-external-link-fill z-[1] ml-2"> </i>
           <div
             class="absolute top-0 right-full w-full h-full bg-Text group-hover:translate-x-full z-0 duration-200"
           ></div>
         </a>
-        <div class="flex-none mr-auto bg-Red">
+        <div class="hidden items-center lg:flex">
           <i class="ri-arrow-down-double-fill text-white z-[1]"></i>
+          <p class="ml-2 text-white">Learn more</p>
         </div>
       </div>
     </div>
