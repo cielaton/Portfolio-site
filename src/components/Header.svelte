@@ -10,7 +10,7 @@
 </script>
 
 <header
-  class={"sticky z-10 top-0 px-10 flex flex-row items-center justify-between border border-solid " +
+  class={"sticky z-10 top-0 px-5 md:px-10 flex flex-row items-center justify-between border border-solid " +
     (scrollY > 0
       ? "py-4 bg-Crust border-Text"
       : "py-6 bg-transparent border-transparent")}
