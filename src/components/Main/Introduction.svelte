@@ -1,12 +1,21 @@
+<script>
+  import { getContext } from "svelte";
+
+  //Update the _scrollY value
+  let scrollY = getContext("scroll").scrollY;
+  $: _scrollY = $scrollY;
+</script>
+
 <section
   id="Introduction"
-  class="grid grid-cols-1 lg:grid-cols-2 gap-20 grow lg:px-20"
+  class={"grid grid-cols-1 lg:grid-cols-2 gap-20 px-4 lg:px-20 " +
+    (_scrollY > 0 ? "h-[calc(100svh-5rem)]" : "h-[calc(100svh-6rem)]")}
 >
   <div
     class="flex flex-col gap-5 text-center lg:justify-center lg:text-left mt-10 lg:mt-0"
   >
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold">
-      Hi! I'm Vo Tuan <span class="text-Teal">Kiet</span>
+      Hi! I'm Tuan <span class="text-Teal">Kiet</span>
     </h1>
     <p class="text-base sm:text-lg md:text-xl">
       I am a <span class="text-Teal">Software Developer</span> who is trying to achieve
