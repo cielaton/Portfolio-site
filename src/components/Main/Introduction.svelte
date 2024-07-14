@@ -43,7 +43,7 @@
     </div>
   </div>
   <img
-    class="h-4/6 justify-self-center self-start lg:self-center"
+    class="w-5/6 lg:h-4/6 lg:w-auto justify-self-center self-start lg:self-center"
     alt="Introduction illustration"
     src="assets/Main/Introduction/Data Maintenance.png"
   />
