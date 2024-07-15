@@ -71,7 +71,7 @@
           {tool.field}
         </h3>
         <p>{tool.description}</p>
-        <div class="flex gap-10 justify-center">
+        <div class="flex gap-14 justify-center">
           {#each tool.icons.name as iconName (iconName)}
             <img
               class="h-14"
