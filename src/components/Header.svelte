@@ -14,10 +14,10 @@
 </script>
 
 <header
-  class={"sticky z-10 top-0 px-5 md:px-10 flex flex-row items-center justify-between border border-solid " +
+  class={"sticky z-10 top-0 px-5 md:px-10 flex flex-row items-center justify-between border border-solid h-20 lg:h-24 " +
     (_scrollY > 0
-      ? "h-20 bg-Crust border-Text"
-      : "h-24 bg-transparent border-transparent")}
+      ? "bg-Crust border-Text"
+      : "bg-transparent border-transparent")}
 >
   <div class="flex gap-8">
     <h1 class="font-bold text-4xl"><span class="text-Teal">ciel</span>aton</h1>

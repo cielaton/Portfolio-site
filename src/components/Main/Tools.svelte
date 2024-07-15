@@ -58,7 +58,7 @@
     </h2>
   </div>
 
-  <div id="Body" class="grid grid-cols-10 gap-5">
+  <div id="Body" class="flex flex-col md:grid md:grid-cols-10 gap-8 md:gap-5">
     {#each tools as tool, index}
       <!--Can use the styles index directly because the map method in the script
       mapped the styles at the same index as the tool's field-->

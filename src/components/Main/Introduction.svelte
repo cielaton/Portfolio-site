@@ -1,15 +1,10 @@
 <script>
   import { getContext } from "svelte";
-
-  //Update the _scrollY value
-  let scrollY = getContext("scroll").scrollY;
-  $: _scrollY = $scrollY;
 </script>
 
 <section
   id="Introduction"
-  class={"grid grid-cols-1 lg:grid-cols-2 gap-20 px-4 lg:px-20 " +
-    (_scrollY > 0 ? "h-[calc(100svh-5rem)]" : "h-[calc(100svh-6rem)]")}
+  class="grid grid-cols-1 lg:grid-cols-2 gap-20 px-4 lg:px-20 h-[calc(100vh-6rem)]"
 >
   <div
     class="flex flex-col gap-5 text-center lg:justify-center lg:text-left mt-10 lg:mt-0"
@@ -43,7 +38,7 @@
     </div>
   </div>
   <img
-    class="w-5/6 lg:h-4/6 lg:w-auto justify-self-center self-start lg:self-center"
+    class="h-3/6 md:h-4/6 w-auto justify-self-center self-start lg:self-center"
     alt="Introduction illustration"
     src="assets/Main/Introduction/Data Maintenance.png"
   />
