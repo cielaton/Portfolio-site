@@ -47,18 +47,16 @@
   id="Tools"
   class="flex flex-col px-4 lg:px-20 pt-5 lg:pt-15 gap-5 md:gap-10"
 >
-  <div id="Heading" class="flex gap-5 items-center">
-    <div
-      class="bg-Teal rounded-lg relative p-1 md:p-2 text-Base leading-none"
-    >
-      <i class="ri-settings-5-fill bg-Red text-2xl aspect-square"></i>
+  <div id="Heading" class="flex gap-4 lg:gap-5 items-center">
+    <div class="bg-Teal rounded-lg relative p-2 text-Base leading-none text-lg lg:text-2xl lg:leading-none">
+      <i class="ri-settings-5-fill"></i>
     </div>
     <h2 class="font-semibold text-2xl md:text-4xl lg:text-5xl">
       Favourite development tools
     </h2>
   </div>
 
-  <div id="Body" class="flex flex-col lg:grid lg:grid-cols-10 gap-8 md:gap-5">
+  <div id="Body" class="flex flex-col lg:grid lg:grid-cols-10 gap-7 lg:gap-5">
     {#each tools as tool, index}
       <!--Can use the styles index directly because the map method in the script
       mapped the styles at the same index as the tool's field-->
