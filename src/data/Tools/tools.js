@@ -6,10 +6,8 @@ const tools = [
       "HTML, CSS, and JavaScript are the fundamental web-building skills. All of the projects that I have worked on used the technology built on top of those bases such as React, Svelte, and Tailwind CSS. React Native also be used to build simple mobile applications.",
     icons: {
       path: "Front-end",
-      name: ["HTML, CSS, JavaScript, React, Svelte, Tailwind-CSS"],
+      name: ["HTML", "CSS", "JavaScript", "React", "Svelte", "Tailwind-CSS"],
     },
-    span_for: 6,
-    color: "Teal",
   },
   {
     id: 2,
@@ -20,8 +18,6 @@ const tools = [
       path: "Back-end",
       name: ["NodeJS", "Rust", "Zig"],
     },
-    span_for: 4,
-    color: "Red",
   },
   {
     id: 3,
@@ -32,8 +28,6 @@ const tools = [
       path: "Embedded",
       name: ["STM32", "IntelFPGA", "Arduino"],
     },
-    span_for: 3,
-    color: "Lavender",
   },
   {
     id: 4,
@@ -44,8 +38,6 @@ const tools = [
       path: "Linux-administration",
       name: ["Linux", "Debian", "Alpine", "Bash"],
     },
-    span_for: 4,
-    color: "Green",
   },
   {
     id: 5,
@@ -56,8 +48,6 @@ const tools = [
       path: "Database",
       name: ["MongoDB", "PostgreSQL"],
     },
-    span_for: 3,
-    color: "Blue",
   },
   {
     id: 6,
@@ -68,8 +58,6 @@ const tools = [
       path: "Hosting-and-deployment",
       name: ["Docker", "GoogleCloud", "AWS", "SSH"],
     },
-    span_for: 5,
-    color: "Yellow",
   },
   {
     id: 7,
@@ -80,8 +68,6 @@ const tools = [
       path: "Miscellaneous",
       name: ["Git", "Github", "Neovim"],
     },
-    span_for: 5,
-    color: "Pink",
   },
 ];
 
