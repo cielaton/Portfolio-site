@@ -45,39 +45,50 @@
 
 <section
   id="Tools"
-  class="flex flex-col px-4 lg:px-20 pt-5 lg:pt-20 gap-5 md:gap-10"
+  class="flex flex-col gap-5 md:gap-10 px-4 lg:px-10 xl:px-20 pt-5 lg:pt-15"
 >
-  <div id="Heading" class="flex gap-5 items-center">
+  <div id="Heading" class="flex gap-4 lg:gap-5 items-center">
     <div
-      class="bg-Teal rounded-lg relative leading-none p-2 text-Base text-3xl"
+      class="bg-Teal rounded-lg relative p-2 text-Base leading-none text-lg lg:text-2xl lg:leading-none"
     >
       <i class="ri-settings-5-fill"></i>
     </div>
-    <h2 class="font-semibold text-3xl md:text-5xl">
+    <h2 class="font-semibold text-2xl md:text-4xl lg:text-5xl">
       Favourite development tools
     </h2>
   </div>
 
-  <div id="Body" class="flex flex-col md:grid md:grid-cols-10 gap-8 md:gap-5">
+  <div id="Body" class="flex flex-col lg:grid lg:grid-cols-10 gap-7 lg:gap-5">
     {#each tools as tool, index}
       <!--Can use the styles index directly because the map method in the script
       mapped the styles at the same index as the tool's field-->
       <div
-        class={`p-7 flex flex-col gap-5 bg-Base rounded-lg ${toolSectionStyles[index].span}`}
+        class={`p-10 lg:p-7 flex flex-col gap-5 bg-Base rounded-lg ${toolSectionStyles[index].span}`}
       >
         <h3
-          class={`font-semibold text-2xl ${toolSectionStyles[index].text_color}`}
+          class={`leading-none font-semibold text-2xl ${toolSectionStyles[index].text_color}`}
         >
           {tool.field}
         </h3>
-        <p>{tool.description}</p>
-        <div class="flex gap-14 justify-center">
+        <p class="text-base md:text-lg">{tool.description}</p>
+        <div
+          class={"relative flex items-center max-w-full justify-between flex-wrap lg:flex-nowrap " +
+            (tool.icons.name.length <= 4
+              ? tool.icons.name.length <= 2
+                ? "px-20 md:px-44 lg:px-14 xl:px-28"
+                : "px-2 md:px-20 lg:px-0 xl:px-20"
+              : " gap-y-3 px-8 md:px-20 lg:px-0 xl:px-20")}
+        >
           {#each tool.icons.name as iconName (iconName)}
             <img
-              class="h-14"
+              class={iconName == "IntelFPGA" ? "h-6 md:h-8" : "h-10 md:h-14"}
               src={`${iconsPath}/${tool.icons.path}/${iconName}.png`}
               alt={iconName}
             />
+            <!--This is for break the icons in 2 rows in mobile view-->
+            {#if iconName == "JavaScript"}
+              <div class="basis-full lg:hidden"></div>
+            {/if}
           {/each}
         </div>
       </div>
