@@ -48,7 +48,9 @@
   class="flex flex-col px-4 lg:px-20 pt-5 lg:pt-15 gap-5 md:gap-10"
 >
   <div id="Heading" class="flex gap-4 lg:gap-5 items-center">
-    <div class="bg-Teal rounded-lg relative p-2 text-Base leading-none text-lg lg:text-2xl lg:leading-none">
+    <div
+      class="bg-Teal rounded-lg relative p-2 text-Base leading-none text-lg lg:text-2xl lg:leading-none"
+    >
       <i class="ri-settings-5-fill"></i>
     </div>
     <h2 class="font-semibold text-2xl md:text-4xl lg:text-5xl">
@@ -61,7 +63,7 @@
       <!--Can use the styles index directly because the map method in the script
       mapped the styles at the same index as the tool's field-->
       <div
-        class={`p-7 flex flex-col gap-5 bg-Base rounded-lg ${toolSectionStyles[index].span}`}
+        class={`p-10 lg:p-7 flex flex-col gap-5 bg-Base rounded-lg ${toolSectionStyles[index].span}`}
       >
         <h3
           class={`font-semibold text-2xl ${toolSectionStyles[index].text_color}`}
@@ -69,13 +71,23 @@
           {tool.field}
         </h3>
         <p class="text-base md:text-lg">{tool.description}</p>
-        <div class="flex gap-14 justify-center">
+        <div
+          class={"relative flex flex-wrap items-center max-w-full justify-between " +
+            (tool.icons.name.length <= 4
+              ? tool.icons.name.length <= 2
+                ? "px-10 lg:px-28"
+                : "px-2 lg:px-20"
+              : "px-8 gap-y-3 lg:px-20")}
+        >
           {#each tool.icons.name as iconName (iconName)}
             <img
-              class="h-14"
+              class={iconName == "IntelFPGA" ? "h-6 md:8" : "h-10 md:h-14"}
               src={`${iconsPath}/${tool.icons.path}/${iconName}.png`}
               alt={iconName}
             />
+            {#if iconName == "JavaScript"}
+              <div class="basis-full lg:hidden"></div>
+            {/if}
           {/each}
         </div>
       </div>

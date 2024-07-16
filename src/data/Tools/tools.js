@@ -6,7 +6,7 @@ const tools = [
       "HTML, CSS, and JavaScript are the fundamental web-building skills. All of the projects that I have worked on used the technology built on top of those bases such as React, Svelte, and Tailwind CSS. React Native also be used to build simple mobile applications.",
     icons: {
       path: "Front-end",
-      name: ["HTML", "CSS", "JavaScript", "React", "Svelte", "Tailwind-CSS"],
+      name: ["HTML", "CSS", "JavaScript", "Svelte", "Tailwind-CSS", "React"],
     },
   },
   {
