@@ -14,9 +14,9 @@
 </script>
 
 <header
-  class={"sticky z-10 top-0 px-5 md:px-10 flex flex-row items-center justify-between border border-solid h-20 lg:h-24 " +
+  class={"sticky z-10 top-0 px-5 md:px-10 flex flex-row items-center justify-between border-b-[1px] border-solid h-20 lg:h-24 " +
     (_scrollY > 0
-      ? "bg-Crust border-Text"
+      ? "bg-Crust border-Surface2 border-opacity-50"
       : "bg-transparent border-transparent")}
 >
   <div class="flex gap-8">
