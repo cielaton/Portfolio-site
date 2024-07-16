@@ -45,7 +45,7 @@
 
 <section
   id="Tools"
-  class="flex flex-col gap-5 md:gap-10 px-4 lg:px-10 xl:px-20 pt-5 lg:pt-15"
+  class="flex flex-col gap-5 md:gap-10 pt-5 lg:pt-15"
 >
   <div id="Heading" class="flex gap-4 lg:gap-5 items-center">
     <div

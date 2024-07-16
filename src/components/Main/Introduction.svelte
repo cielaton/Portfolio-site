@@ -4,7 +4,7 @@
 
 <section
   id="Introduction"
-  class="grid grid-cols-1 lg:grid-cols-2 gap-20 px-4 lg:px-20 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)]"
+  class="grid grid-cols-1 lg:grid-cols-2 gap-20 h-[calc(100vh-6rem)]"
 >
   <div
     class="flex flex-col gap-5 text-center lg:justify-center lg:text-left mt-10 lg:mt-0"
