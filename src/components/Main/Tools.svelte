@@ -75,9 +75,9 @@
           class={"relative flex flex-wrap items-center max-w-full justify-between " +
             (tool.icons.name.length <= 4
               ? tool.icons.name.length <= 2
-                ? "px-10 lg:px-28"
-                : "px-2 lg:px-20"
-              : "px-8 gap-y-3 lg:px-20")}
+                ? "px-20 md:px-44 lg:px-28"
+                : "px-2 md:px-20 lg:px-20"
+              : " gap-y-3 px-8 md:px-20 lg:px-20")}
         >
           {#each tool.icons.name as iconName (iconName)}
             <img
@@ -85,6 +85,7 @@
               src={`${iconsPath}/${tool.icons.path}/${iconName}.png`}
               alt={iconName}
             />
+            <!--This is for break the icons in 2 rows in mobile view-->
             {#if iconName == "JavaScript"}
               <div class="basis-full lg:hidden"></div>
             {/if}
