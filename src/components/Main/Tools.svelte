@@ -45,7 +45,7 @@
 
 <section
   id="Tools"
-  class="flex flex-col px-4 lg:px-20 pt-5 lg:pt-15 gap-5 md:gap-10"
+  class="flex flex-col gap-5 md:gap-10 px-4 lg:px-10 xl:px-20 pt-5 lg:pt-15"
 >
   <div id="Heading" class="flex gap-4 lg:gap-5 items-center">
     <div
@@ -66,22 +66,22 @@
         class={`p-10 lg:p-7 flex flex-col gap-5 bg-Base rounded-lg ${toolSectionStyles[index].span}`}
       >
         <h3
-          class={`font-semibold text-2xl ${toolSectionStyles[index].text_color}`}
+          class={`leading-none font-semibold text-2xl ${toolSectionStyles[index].text_color}`}
         >
           {tool.field}
         </h3>
         <p class="text-base md:text-lg">{tool.description}</p>
         <div
-          class={"relative flex flex-wrap items-center max-w-full justify-between " +
+          class={"relative flex items-center max-w-full justify-between flex-wrap lg:flex-nowrap " +
             (tool.icons.name.length <= 4
               ? tool.icons.name.length <= 2
-                ? "px-20 md:px-44 lg:px-28"
-                : "px-2 md:px-20 lg:px-20"
-              : " gap-y-3 px-8 md:px-20 lg:px-20")}
+                ? "px-20 md:px-44 lg:px-14 xl:px-28"
+                : "px-2 md:px-20 lg:px-0 xl:px-20"
+              : " gap-y-3 px-8 md:px-20 lg:px-0 xl:px-20")}
         >
           {#each tool.icons.name as iconName (iconName)}
             <img
-              class={iconName == "IntelFPGA" ? "h-6 md:8" : "h-10 md:h-14"}
+              class={iconName == "IntelFPGA" ? "h-6 md:h-8" : "h-10 md:h-14"}
               src={`${iconsPath}/${tool.icons.path}/${iconName}.png`}
               alt={iconName}
             />
