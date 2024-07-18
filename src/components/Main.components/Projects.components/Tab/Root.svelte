@@ -2,5 +2,5 @@
 </script>
 
 <div class={$$restProps.class || ""}>
-  <slot />
+    <slot/>
 </div>

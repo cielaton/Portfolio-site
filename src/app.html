@@ -1,37 +1,38 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="%sveltekit.assets%/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     %sveltekit.head%
     <!--Poppins font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
     />
     <!--Ion icons-->
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-      rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+            rel="stylesheet"
     />
-  </head>
+    <title>ehe</title>
+</head>
 
-  <body
-    data-sveltekit-preload-data="hover"
-    class="bg-Crust text-white relative"
-  >
-    <div style="display: contents">%sveltekit.body%</div>
-    <div class="absolute h-screen inset-0 w-full opacity-70 z-[-1]">
-      <div class="absolute inset-0" id="particles-js" />
-    </div>
-    <script src="src/lib/particles-js/particles.js"></script>
-    <script>
-      particlesJS.load("particles-js", "particles_js/particles.json", () => {
+<body
+        data-sveltekit-preload-data="hover"
+        class="bg-Crust text-white relative"
+>
+<div style="display: contents">%sveltekit.body%</div>
+<div class="absolute h-screen inset-0 w-full opacity-70 z-[-1]">
+    <div class="absolute inset-0" id="particles-js"></div>
+</div>
+<script src="src/lib/particles-js/particles.js"></script>
+<script>
+    particlesJS.load("particles-js", "particles_js/particles.json", () => {
         console.log("[Dependencies]: Particles.js config loaded");
-      });
-    </script>
-  </body>
+    });
+</script>
+</body>
 </html>

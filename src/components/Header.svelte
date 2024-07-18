@@ -1,58 +1,58 @@
 <script>
-  import { getContext } from "svelte";
+    import {getContext} from "svelte";
 
-  //Update the _scrollY value
-  let scrollY = getContext("scroll").scrollY;
-  $: _scrollY = $scrollY;
+    //Update the _scrollY value
+    let scrollY = getContext("scroll").scrollY;
+    $: _scrollY = $scrollY;
 
-  let navigations = [
-    { name: "Home", link: "" },
-    { name: "Tools", link: "" },
-    { name: "Projects", link: "" },
-    { name: "About me", link: "" },
-  ];
+    let navigations = [
+        {name: "Home", link: ""},
+        {name: "Tools", link: ""},
+        {name: "Projects", link: ""},
+        {name: "About me", link: ""},
+    ];
 </script>
 
 <header
-  class={"sticky z-10 top-0 px-5 md:px-10 flex flex-row items-center justify-between border-b-[1px] border-solid h-20 lg:h-24 " +
+        class={"sticky z-10 top-0 px-5 md:px-10 flex flex-row items-center justify-between border-b-[1px] border-solid h-20 lg:h-24 " +
     (_scrollY > 0
       ? "bg-Crust border-Surface2 border-opacity-50"
       : "bg-transparent border-transparent")}
 >
-  <div class="flex gap-8">
-    <h1 class="font-bold text-4xl"><span class="text-Teal">ciel</span>aton</h1>
-    <div class="lg:flex gap-8 items-center hidden">
-      {#each navigations as element}
-        <a href={element.link} class="duration-150 hover:text-Teal">
-          <p>{element.name}</p>
-        </a>
-      {/each}
+    <div class="flex gap-8">
+        <h1 class="font-bold text-4xl"><span class="text-Teal">ciel</span>aton</h1>
+        <div class="lg:flex gap-8 items-center hidden">
+            {#each navigations as element}
+                <a href={element.link} class="duration-150 hover:text-Teal">
+                    <p>{element.name}</p>
+                </a>
+            {/each}
+        </div>
     </div>
-  </div>
-  <div class="flex gap-8 items-center">
-    <a
-      href="https://github.com/cielaton"
-      target="_blank"
-      class="hidden sm:inline"
-    >
-      <i class="ri-github-fill text-4xl"></i>
-    </a>
-    <a
-      href="https://www.linkedin.com/in/v%C3%B5-tu%E1%BA%A5n-ki%E1%BB%87t-16311a290/"
-      target="_blank"
-      class="hidden sm:inline"
-    >
-      <i class="ri-linkedin-box-fill text-4xl"></i>
-    </a>
-    <a
-      href="vtuankiet17@gmail.com"
-      target="_blank"
-      class="relative px-5 py-2 group rounded-lg bg-white overflow-hidden"
-    >
-      <h4 class="relative text-Base font-medium z-[1]">Get in touch</h4>
-      <div
-        class="absolute top-0 right-full w-full h-full bg-Text group-hover:translate-x-full z-0 duration-200"
-      ></div>
-    </a>
-  </div>
+    <div class="flex gap-8 items-center">
+        <a
+                href="https://github.com/cielaton"
+                target="_blank"
+                class="hidden sm:inline"
+        >
+            <i class="ri-github-fill text-4xl"></i>
+        </a>
+        <a
+                href="https://www.linkedin.com/in/v%C3%B5-tu%E1%BA%A5n-ki%E1%BB%87t-16311a290/"
+                target="_blank"
+                class="hidden sm:inline"
+        >
+            <i class="ri-linkedin-box-fill text-4xl"></i>
+        </a>
+        <a
+                href="vtuankiet17@gmail.com"
+                target="_blank"
+                class="relative px-5 py-2 group rounded-lg bg-white overflow-hidden"
+        >
+            <h4 class="relative text-Base font-medium z-[1]">Get in touch</h4>
+            <div
+                    class="absolute top-0 right-full w-full h-full bg-Text group-hover:translate-x-full z-0 duration-200"
+            ></div>
+        </a>
+    </div>
 </header>

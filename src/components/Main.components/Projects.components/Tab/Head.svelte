@@ -1,8 +1,8 @@
 <script>
 </script>
 
-<div class={$$restProps.class || ""}>
-  <ul class="">
-    <slot />
-  </ul>
+<div class="">
+    <ul class={$$restProps.class || ""}>
+        <slot/>
+    </ul>
 </div>

@@ -1,9 +1,15 @@
 <script>
-  export let id;
+    export let id;
 </script>
 
-<li class={$$restProps.class || ""}>
-  <button on:click class="" {id} type="button" role="tab">
-    <slot />
-  </button>
+<li class="w-full">
+    <button
+            on:click
+            class={$$restProps.class || ""}
+            {id}
+            type="button"
+            role="tab"
+    >
+        <slot/>
+    </button>
 </li>
