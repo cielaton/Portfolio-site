@@ -5,6 +5,6 @@
 
 {#if activeTabId === id}
     <div class={$$restProps.class || ""} {id} role="tabpanel">
-        <slot/>
+        <slot class={$$restProps.class || ""}></slot>
     </div>
 {/if}

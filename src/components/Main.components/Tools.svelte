@@ -1,5 +1,5 @@
 <script>
-    import tools from "../../data/Tools/tools.js";
+    import tools from "../../data/tools/tools.js";
 
     const toolSectionStyles = tools.map((tool) => {
         switch (tool.field) {
@@ -81,12 +81,12 @@
                 >
                     {#each tool.icons.name as iconName (iconName)}
                         <img
-                                class={iconName == "IntelFPGA" ? "h-6 md:h-8" : "h-10 md:h-14"}
+                                class={iconName === "IntelFPGA" ? "h-6 md:h-8" : "h-10 md:h-14"}
                                 src={`${iconsPath}/${tool.icons.path}/${iconName}.png`}
                                 alt={iconName}
                         />
                         <!--This is for break the icons in 2 rows in mobile view-->
-                        {#if iconName == "JavaScript"}
+                        {#if iconName === "JavaScript"}
                             <div class="basis-full lg:hidden"></div>
                         {/if}
                     {/each}

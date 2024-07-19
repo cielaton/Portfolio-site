@@ -1,10 +1,11 @@
 <script>
     import {onMount} from "svelte";
     import * as Tab from "./Projects.components/Tab";
-
-    const tabNames = ["Personal work", "Team projects"];
+    import {projects} from "../../data/projects/projects.js";
 
     let activeTabId = 0;
+
+    const imagePath = "assets/Main/Projects";
 
     const handleClick = (tabValue) => {
         activeTabId = tabValue;
@@ -23,11 +24,11 @@
             indicator.style.height = tabs[0].getBoundingClientRect().height + "px";
             indicator.style.left = tabs[0].getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left + "px"
 
-        tabs.forEach((tab) => {
-            tab.addEventListener("click", () => {
-                indicator.style.left = tab.getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left + "px"
+            tabs.forEach((tab) => {
+                tab.addEventListener("click", () => {
+                    indicator.style.left = tab.getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left + "px"
+                })
             })
-        })
         }
     )
 
@@ -40,25 +41,41 @@
     >
         Curious to see my <span class="text-Teal">creation</span>?
     </h2>
-    <Tab.Root class="" id="Body">
+    <Tab.Root class="flex flex-col gap-10" id="Body">
         <Tab.Head class="relative w-1/3 flex items-center mx-auto px-2 py-2 bg-Surface0 rounded-lg">
-            <div id="indicator" class="absolute transition-all my-auto mx-2 z-[1] top-0 left-0 bottom-0 rounded-lg bg-Mantle"/>
-            {#each tabNames as tabName, index}
+            <div id="indicator"
+                 class="absolute transition-all my-auto mx-2 z-[1] top-0 left-0 bottom-0 rounded-lg bg-Mantle"/>
+            {#each projects as projectType, index}
                 <Tab.HeadItem
                         class={"tab relative z-[10] w-full flex gap-3 py-2 justify-center rounded-lg " + (activeTabId === index ? "text-Teal" : "")}
                         id={index}
                         on:click={() => handleClick(index)}>
-                    {#if tabName === "Personal work"}
+                    {#if projectType.name === "Personal work"}
                         <i class="ri-user-3-fill text-base"></i>
-                    {:else if tabName === "Team projects"}
+                    {:else if projectType.name === "Team projects"}
                         <i class="ri-team-fill text-base"></i>
                     {/if}
-                    <p class="text-base">{tabName}</p>
+                    <p class="text-base">{projectType.name}</p>
                 </Tab.HeadItem
                 >
             {/each}
         </Tab.Head>
-        <Tab.Content {activeTabId} class="" id={0}>Personal Work</Tab.Content>
-        <Tab.Content {activeTabId} class="" id={1}>Team projects</Tab.Content>
+        {#each projects as projectType, index}
+            <Tab.Content {activeTabId} class="grid grid-cols-2 gap-5" id={index}>
+                {#each projectType.list as project}
+                    <div class="flex bg-Base rounded-xl h-1/3 p-5">
+                        <img class="object-cover rounded-lg aspect-[4/3] h-full"
+                             src={`${imagePath}/${projectType.imageFolder}/${project.image_name}.png`}
+                             alt="project"/>
+                        <div>
+                            <h3>{project.name}</h3>
+                            <p>{project.description}</p>
+                            <a href={project.link}>Learn more</a>
+                        </div>
+                    </div>
+                {/each}
+            </Tab.Content>
+        {/each}
+
     </Tab.Root>
 </section>
