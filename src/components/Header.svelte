@@ -5,12 +5,14 @@
     let scrollY = getContext("scroll").scrollY;
     $: _scrollY = $scrollY;
 
-    let navigations = [
-        {name: "Home", link: ""},
-        {name: "Tools", link: ""},
-        {name: "Projects", link: ""},
-        {name: "About me", link: ""},
-    ];
+
+  let navigations = [
+    { name: "Introduction", link: "#Introduction" },
+    { name: "Tools", link: "#Tools" },
+    { name: "Projects", link: "#Projects" },
+    { name: "About me", link: "About me" },
+  ];
+
 </script>
 
 <header
