@@ -61,16 +61,24 @@
             {/each}
         </Tab.Head>
         {#each projects as projectType, index}
-            <Tab.Content {activeTabId} class="grid grid-cols-2 gap-5" id={index}>
+            <Tab.Content {activeTabId} class="grid grid-cols-2 gap-8" id={index}>
                 {#each projectType.list as project}
-                    <div class="flex bg-Base rounded-xl h-1/3 p-5">
+                    <div class="flex gap-5 bg-Base rounded-xl h-2/5 p-5">
                         <img class="object-cover rounded-lg aspect-[4/3] h-full"
                              src={`${imagePath}/${projectType.imageFolder}/${project.image_name}.png`}
                              alt="project"/>
-                        <div>
-                            <h3>{project.name}</h3>
+                        <div class="flex h-full flex-col gap-2">
+                            <a href={project.link} target="_blank">
+                                <h3 class="text-2xl leading-none font-semibold">{project.name}
+                                    <i class="ri-external-link-fill"> </i>
+                                </h3>
+                            </a>
                             <p>{project.description}</p>
-                            <a href={project.link}>Learn more</a>
+                            <div class="mt-2 flex gap-2">
+                                {#each project.technologies as technology}
+                                    <p class="">{technology}</p>
+                                {/each}
+                            </div>
                         </div>
                     </div>
                 {/each}
