@@ -4,8 +4,30 @@
     import {projects} from "../../data/projects/projects.js";
 
     let activeTabId = 0;
-
     const imagePath = "assets/Main/Projects";
+    const colors = ["bg-Red", "bg-Green", "bg-Blue", "bg-Pink", "bg-Yellow", "bg-Teal", "bg-Peach"];
+    //Return the exact structure of project object, only with the colors property
+    const technologyColors = projects.map((projectName) => {
+        return {
+            name: projectName,
+            list: projectName.list.map((project) => {
+                // This is for resetting the temp color array for each project
+                let tempColors = [...colors];
+                return {
+                    name: project.name,
+                    colors: project.technologies.map((technology) => {
+                        //Reset the temp colors value after it's empty, cannot reset it outside the map method since it have to wait for the whole proj
+                        const randomNumber = Math.floor(Math.random() * tempColors.length);
+                        const returnedColor = tempColors[randomNumber];
+                        //Prevent repeating color
+                        tempColors.splice(randomNumber, 1);
+                        return returnedColor;
+                    })
+                }
+            }),
+        }
+    })
+
 
     const handleClick = (tabValue) => {
         activeTabId = tabValue;
@@ -43,8 +65,8 @@
     </h2>
     <Tab.Root class="flex flex-col gap-10" id="Body">
         <Tab.Head class="relative w-1/3 flex items-center mx-auto px-2 py-2 bg-Surface0 rounded-lg">
-            <div id="indicator"
-                 class="absolute transition-all my-auto mx-2 z-[1] top-0 left-0 bottom-0 rounded-lg bg-Mantle"/>
+            <div class="absolute transition-all my-auto mx-2 z-[1] top-0 left-0 bottom-0 rounded-lg bg-Mantle"
+                 id="indicator"/>
             {#each projects as projectType, index}
                 <Tab.HeadItem
                         class={"tab relative z-[10] w-full flex gap-3 py-2 justify-center rounded-lg " + (activeTabId === index ? "text-Teal" : "")}
@@ -60,9 +82,9 @@
                 >
             {/each}
         </Tab.Head>
-        {#each projects as projectType, index}
-            <Tab.Content {activeTabId} class="grid grid-cols-2 gap-8 transition-all" id={index}>
-                {#each projectType.list as project}
+        {#each projects as projectType, projectTypeIndex}
+            <Tab.Content {activeTabId} class="grid grid-cols-2 gap-8 transition-all" id={projectTypeIndex}>
+                {#each projectType.list as project, projectIndex}
                     <div class="flex gap-5 bg-Base rounded-xl p-5">
                         <img class="object-cover h-[calc(100vh/5)] aspect-[4/3] rounded-lg"
                              src={`${imagePath}/${projectType.imageFolder}/${project.image_name}.png`}
@@ -74,9 +96,10 @@
                                 </h3>
                             </a>
                             <p>{project.description}</p>
-                            <div class="mt-2 flex gap-2">
-                                {#each project.technologies as technology}
-                                    <p class="">{technology}</p>
+                            <div class="mt-2 flex gap-3">
+                                {#each project.technologies as technology, technologyIndex}
+                                    <!--accessTechnologyColors with the root index (projects index), then the project inside the list property, and finally, the color property-->
+                                    <p class={"rounded-lg text-Base px-2 py-[2px] " + technologyColors[projectTypeIndex].list[projectIndex].colors[technologyIndex]}>{technology}</p>
                                 {/each}
                             </div>
                         </div>
