@@ -61,10 +61,10 @@
             {/each}
         </Tab.Head>
         {#each projects as projectType, index}
-            <Tab.Content {activeTabId} class="grid grid-cols-2 gap-8" id={index}>
+            <Tab.Content {activeTabId} class="grid grid-cols-2 gap-8 transition-all" id={index}>
                 {#each projectType.list as project}
-                    <div class="flex gap-5 bg-Base rounded-xl h-2/5 p-5">
-                        <img class="object-cover rounded-lg aspect-[4/3] h-full"
+                    <div class="flex gap-5 bg-Base rounded-xl p-5">
+                        <img class="object-cover h-[calc(100vh/5)] aspect-[4/3] rounded-lg"
                              src={`${imagePath}/${projectType.imageFolder}/${project.image_name}.png`}
                              alt="project"/>
                         <div class="flex h-full flex-col gap-2">
