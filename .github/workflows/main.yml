@@ -13,10 +13,9 @@ jobs:
       - name: Install packages and build
         run: yarn install && yarn build
 
-      - name: Deploy to Github pages
-        uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: gh-pages
-          build_dir: public
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
 
 
