@@ -1,1 +1,22 @@
-//Nothing yet
+name: Deploy to github pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install packages and build
+        run: yarn install && yarn build
+
+      - name: Deploy to Github pages
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: gh-pages
+          build_dir: public
+
+
