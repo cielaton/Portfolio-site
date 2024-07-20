@@ -12,18 +12,18 @@ export const projects = [{
         image_name: "Linux_desktop",
         technologies: ["GNU/Linux", "Shell script", "SCSS"]
     }, {
-        name: "No project", description: "Unknown", link: [["none"]], image_name: "unavailable", technologies: ["none"]
+        name: "No project", description: "Unknown", link: [[""]], image_name: "unavailable", technologies: [""]
     }, {
-        name: "No project", description: "Unknown", link: [["none"]], image_name: "unavailable", technologies: ["none"]
+        name: "No project", description: "Unknown", link: [[""]], image_name: "unavailable", technologies: [""]
     }]
 }, {
     name: "Team projects", imageFolder: "team_projects", list: [{
-        name: "No project", description: "Unknown", link: [["none"]], image_name: "unavailable", technologies: ["none"]
+        name: "No project", description: "Unknown", link: [[""]], image_name: "unavailable", technologies: [""]
     }, {
-        name: "No project", description: "Unknown", link: [["none"]], image_name: "unavailable", technologies: ["none"]
+        name: "No project", description: "Unknown", link: [[""]], image_name: "unavailable", technologies: [""]
     }, {
-        name: "No project", description: "Unknown", link: [["none"]], image_name: "unavailable", technologies: ["none"]
+        name: "No project", description: "Unknown", link: [[""]], image_name: "unavailable", technologies: [""]
     }, {
-        name: "No project", description: "Unknown", link: [["none"]], image_name: "unavailable", technologies: ["none"]
+        name: "No project", description: "Unknown", link: [[""]], image_name: "unavailable", technologies: [""]
     }]
 }]
