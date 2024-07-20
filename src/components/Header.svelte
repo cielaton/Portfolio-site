@@ -10,7 +10,7 @@
     { name: "Introduction", link: "#Introduction" },
     { name: "Tools", link: "#Tools" },
     { name: "Projects", link: "#Projects" },
-    { name: "About me", link: "About me" },
+    { name: "About me", link: "#About me" },
   ];
 
 </script>
