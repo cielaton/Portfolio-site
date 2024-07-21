@@ -56,15 +56,15 @@
 
 </script>
 
-<section class="flex flex-col gap-10 pt-10 lg:pt-40" id="Projects">
+<section class="flex flex-col gap-10 pt-20 md:pt-32 lg:pt-40" id="Projects">
     <h2
             class="text-center font-semibold text-2xl md:text-4xl lg:text-5xl"
             id="Heading"
     >
-        Curious to see my <span class="text-Teal">creation</span>?
+        Curious to see my <span class="text-Teal">creations</span>?
     </h2>
     <Tab.Root class="flex flex-col gap-10" id="Body">
-        <Tab.Head class="relative w-1/3 flex items-center mx-auto px-2 py-2 bg-Surface0 rounded-lg">
+        <Tab.Head class="relative w-full md:w-2/3 lg:w-1/3 flex items-center mx-auto px-2 py-2 bg-Surface0 rounded-lg">
             <div class="absolute transition-all duration-200 my-auto mx-2 z-[1] top-0 left-0 bottom-0 rounded-lg bg-Mantle"
                  id="indicator"/>
             {#each projects as projectType, index}
