@@ -69,37 +69,37 @@
                  id="indicator"/>
             {#each projects as projectType, index}
                 <Tab.HeadItem
-                        class={"tab relative z-[10] w-full flex gap-3 py-2 justify-center rounded-lg " + (activeTabId === index ? "text-Teal" : "")}
+                        class={"tab relative z-[10] w-full flex gap-3 py-2 justify-center rounded-lg text-sm md:text-base " + (activeTabId === index ? "text-Teal" : "")}
                         id={index}
                         on:click={() => handleClick(index)}>
                     {#if projectType.name === "Personal work"}
-                        <i class="ri-user-3-fill text-base"></i>
+                        <i class="ri-user-3-fill"></i>
                     {:else if projectType.name === "Team projects"}
-                        <i class="ri-team-fill text-base"></i>
+                        <i class="ri-team-fill"></i>
                     {/if}
-                    <p class="text-base">{projectType.name}</p>
+                    <p class="">{projectType.name}</p>
                 </Tab.HeadItem
                 >
             {/each}
         </Tab.Head>
         {#each projects as projectType, projectTypeIndex}
-            <Tab.Content {activeTabId} class="grid grid-cols-2 gap-8 transition-all" id={projectTypeIndex}>
+            <Tab.Content {activeTabId} class="flex flex-col md:grid md:grid-cols-2 gap-8 transition-all" id={projectTypeIndex}>
                 {#each projectType.list as project, projectIndex}
-                    <div class="flex gap-5 bg-Base rounded-xl p-5">
-                        <img class="object-cover h-[calc(100vh/5)] aspect-[4/3] rounded-lg"
+                    <div class="flex flex-col 2xl:flex-row gap-5 bg-Base rounded-xl p-5">
+                        <img class="object-cover 2xl:w-[calc(100vw/6)] aspect-[6/3] 2xl:aspect-[4/3] rounded-lg"
                              src={`${imagePath}/${projectType.imageFolder}/${project.image_name}.png`}
                              alt="project"/>
                         <div class="flex h-full flex-col gap-2">
                             <a href={project.link} target="_blank">
-                                <h3 class="text-2xl leading-none font-semibold">{project.name}
+                                <h3 class="text-xl lg:text-2xl leading-none font-semibold">{project.name}
                                     <i class="ri-external-link-fill"> </i>
                                 </h3>
                             </a>
-                            <p>{project.description}</p>
+                            <p class="text-sm lg:text-base">{project.description}</p>
                             <div class="mt-2 flex gap-3">
                                 {#each project.technologies as technology, technologyIndex}
                                     <!--accessTechnologyColors with the root index (projects index), then the project inside the list property, and finally, the color property-->
-                                    <p class={"rounded-lg text-Base px-2 py-[2px] " + technologyColors[projectTypeIndex].list[projectIndex].colors[technologyIndex]}>{technology}</p>
+                                    <p class={"rounded-lg text-sm text-Base px-2 py-[2px] " + technologyColors[projectTypeIndex].list[projectIndex].colors[technologyIndex]}>{technology}</p>
                                 {/each}
                             </div>
                         </div>
