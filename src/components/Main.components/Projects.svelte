@@ -15,7 +15,7 @@
                 let tempColors = [...colors];
                 return {
                     name: project.name,
-                    colors: project.technologies.map((technology) => {
+                    colors: project.technologies.map(() => {
                         //Reset the temp colors value after it's empty, cannot reset it outside the map method since it have to wait for the whole proj
                         const randomNumber = Math.floor(Math.random() * tempColors.length);
                         const returnedColor = tempColors[randomNumber];
@@ -65,7 +65,7 @@
     </h2>
     <Tab.Root class="flex flex-col gap-10" id="Body">
         <Tab.Head class="relative w-1/3 flex items-center mx-auto px-2 py-2 bg-Surface0 rounded-lg">
-            <div class="absolute transition-all my-auto mx-2 z-[1] top-0 left-0 bottom-0 rounded-lg bg-Mantle"
+            <div class="absolute transition-all duration-200 my-auto mx-2 z-[1] top-0 left-0 bottom-0 rounded-lg bg-Mantle"
                  id="indicator"/>
             {#each projects as projectType, index}
                 <Tab.HeadItem

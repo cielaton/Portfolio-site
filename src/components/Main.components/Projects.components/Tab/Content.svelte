@@ -5,7 +5,7 @@
 </script>
 
 {#if activeTabId === id}
-    <div transition:fade={{duration: 200}} class={$$restProps.class || ""} {id} role="tabpanel">
+    <div in:fade={{duration: 200}} class={$$restProps.class || ""} {id} role="tabpanel">
         <slot class={$$restProps.class || ""}></slot>
     </div>
 {/if}
