@@ -1,13 +1,19 @@
 <script>
     let positions = [{
         role: "Front-end developer",
-        color: "bg-Teal"
-    }, {role: "Back-end developer", color: "bg-Red"}, {
+        color: "bg-Teal",
+        shadowColor: "shadow-Teal"
+    }, {
+        role: "Back-end developer", color: "bg-Red",
+        shadowColor: "shadow-Red"
+    }, {
         role: "Linux administration",
-        color: "bg-Green"
-    }, {role: "Embedded developer", color: "bg-Lavender"}]
-
-
+        color: "bg-Green",
+        shadowColor: "shadow-Green"
+    }, {
+        role: "Embedded developer", color: "bg-Lavender",
+        shadowColor: "shadow-Lavender"
+    }]
 </script>
 
 <section id="About me" class="min-h-screen flex items-center pt-10 lg:pt-20">
@@ -23,9 +29,10 @@
                 <p>I will be your</p>
                 <i class="ri-arrow-down-circle-line mt-1"></i>
             </div>
-            <div class="mr-auto grid grid-cols-2 gap-5">
+            <div class="relative mr-auto grid grid-cols-2 gap-6">
                 {#each positions as position}
-                    <div class={"px-5 py-4 rounded-lg " + position.color}>
+                    <div id="position"
+                         class={"px-6 py-5 rounded-lg shadow-[0_5px_100px_-5px_rgba(0,0,0,0.25)] " + position.color + " " + position.shadowColor}>
                         <p class="leading-none text-xl font-medium text-Base">{position.role}</p>
                     </div>
                 {/each}
