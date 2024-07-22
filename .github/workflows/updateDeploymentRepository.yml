@@ -9,13 +9,13 @@ jobs:
   Update-the-repository:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Git configuration
         run: |
           git config user.email "vuwin24680@gmail.com"
           git config user.name "cielaton"
-
-      - name: Checkout code
-        uses: actions/checkout@v4
 
       - name: Repository configuration and pushing
         run: |
