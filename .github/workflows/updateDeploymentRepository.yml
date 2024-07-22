@@ -1,9 +1,13 @@
-name: Upadate the deployment repository
+name: Update the deployment repository
 
 on:
   push:
     branches:
       - main
+
+permissions:
+  contents: read
+  pages: write
 
 jobs:
   Update-the-repository:
