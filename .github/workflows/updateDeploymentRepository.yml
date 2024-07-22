@@ -22,12 +22,12 @@ jobs:
 
       - name: Git configuration
         run: |
-          git config user.email vuwin24680@gmail.com
-          git config user.name cielaton
 
       - name: Repository configuration and pushing
         run: |
           git remote remove origin
           git config --list
           git remote add origin https://github.com/cielaton/cielaton.github.io.git
+          git config user.email vuwin24680@gmail.com
+          git config user.name cielaton
           git push origin main
