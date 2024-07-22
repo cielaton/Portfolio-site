@@ -1,0 +1,23 @@
+name: Upadate the deployment repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Update-the-repository:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git configuration
+        run: |
+          git config user.email "vuwin24680@gmail.com"
+          git config user.name "cielaton"
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Repository configuration and pushing
+        run: |
+          git remote set-url origin https://cielaton:${{secrets.ACCESS_TOKEN}}@github.com/cielaton/cielaton.github.io.git
+          git push origin main
