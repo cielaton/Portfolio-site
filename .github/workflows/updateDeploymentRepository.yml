@@ -20,7 +20,5 @@ jobs:
 
       - name: Repository configuration and pushing
         run: |
-          ls
-          cd Portfolio-site/
           git remote set-url origin https://github.com/cielaton/cielaton.github.io.git
           git push origin main
