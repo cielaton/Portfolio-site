@@ -5,10 +5,13 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  repository-projects: write
 jobs:
   Update-the-repository:
-    permissions:
-      contents: write
     runs-on: ubuntu-latest
     environment: ACCESS_TOKEN
     steps:
