@@ -28,5 +28,5 @@ jobs:
       - name: Repository configuration and pushing
         run: |
           git config --list
-          git remote set-url origin https://github.com/cielaton/cielaton.github.io.git
+          git remote set-url origin https://${{secrets.ACCESS_TOKEN}}github.com/cielaton/cielaton.github.io.git
           git push origin main
