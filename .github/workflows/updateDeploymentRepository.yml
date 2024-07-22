@@ -15,8 +15,8 @@ jobs:
 
       - name: Git configuration
         run: |
-          git config --global user.email "vuwin24680@gmail.com"
-          git config --global user.name "cielaton"
+          /usr/bin/git config --global user.email "vuwin24680@gmail.com"
+          /usr/bin/git config --global user.name "cielaton"
 
       - name: Repository configuration and pushing
         run: |
