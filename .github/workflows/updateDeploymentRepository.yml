@@ -7,6 +7,8 @@ on:
 
 jobs:
   Update-the-repository:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     environment: ACCESS_TOKEN
     steps:
