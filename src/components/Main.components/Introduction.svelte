@@ -3,7 +3,7 @@
 
 <section
         id="Introduction"
-        class="flex flex-col center lg:grid lg:grid-cols-2 h-[calc(100vh-6rem)]"
+        class="flex flex-col center lg:grid lg:grid-cols-2 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)]"
 >
     <div
             class="flex flex-col gap-5 text-center lg:justify-center lg:text-left mt-10 lg:mt-0"
