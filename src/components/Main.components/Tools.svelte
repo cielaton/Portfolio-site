@@ -1,45 +1,14 @@
 <script>
     import tools from "../../data/tools/tools.js";
+    import {beforeUpdate} from "svelte";
 
-    const toolSectionStyles = tools.map((tool) => {
-        switch (tool.field) {
-            case "Front-end":
-                return {
-                    span: "col-span-6",
-                    text_color: "text-Teal",
-                };
-            case "Back-end":
-                return {
-                    span: "col-span-4",
-                    text_color: "text-Red",
-                };
-            case "Embedded":
-                return {
-                    span: "col-span-3",
-                    text_color: "text-Lavender",
-                };
-            case "Linux administration":
-                return {
-                    span: "col-span-4",
-                    text_color: "text-Green",
-                };
-            case "Database":
-                return {
-                    span: "col-span-3",
-                    text_color: "text-Blue",
-                };
-            case "Hosting and deployment":
-                return {
-                    span: "col-span-5",
-                    text_color: "text-Yellow",
-                };
-            case "Miscellaneous":
-                return {
-                    span: "col-span-5",
-                    text_color: "text-Pink",
-                };
-        }
-    });
+    let toolSectionSpan = [], toolSectionTextColor = [];
+    beforeUpdate(() => {
+        tools.forEach((tool) => {
+            toolSectionSpan.push("col-span-" + tool.styles.span)
+            toolSectionTextColor.push('text-' + tool.styles.text_color);
+        })
+    })
     const iconsPath = "assets/Main/Tools";
 </script>
 
@@ -63,10 +32,10 @@
             <!--Can use the styles index directly because the map method in the script
             mapped the styles at the same index as the tool's field-->
             <div
-                    class={`p-10 lg:p-7 flex flex-col gap-5 bg-Base rounded-lg ${toolSectionStyles[index].span}`}
+                    class={"p-10 lg:p-7 flex flex-col gap-5 bg-Base rounded-lg " + toolSectionSpan[index]}
             >
                 <h3
-                        class={`leading-none font-semibold text-2xl ${toolSectionStyles[index].text_color}`}
+                        class={"leading-none font-semibold text-2xl " + toolSectionTextColor[index]}
                 >
                     {tool.field}
                 </h3>

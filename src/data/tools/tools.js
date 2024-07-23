@@ -4,6 +4,10 @@ const tools = [
         field: "Front-end",
         description:
             "HTML, CSS, and JavaScript are the fundamental web-building skills. All of the projects that I have worked on used the technology built on top of those bases such as React, Svelte, and Tailwind CSS. React Native also be used to build simple mobile applications.",
+        styles: {
+            span: 6,
+            text_color: "Teal"
+        },
         icons: {
             path: "Front-end",
             name: ["HTML", "CSS", "JavaScript", "Svelte", "Tailwind-CSS", "React"],
@@ -14,6 +18,10 @@ const tools = [
         field: "Back-end",
         description:
             "Node.js is suitable for constructing simple REST API services, even with authentication/authorization. Rust and Zig will be used for a complex, high-performance, scalability system.",
+        styles: {
+            span: 4,
+            text_color: "Red"
+        },
         icons: {
             path: "Back-end",
             name: ["NodeJS", "Rust", "Zig"],
@@ -24,6 +32,10 @@ const tools = [
         field: "Embedded",
         description:
             "Microcontroller programming on popular families such as Arduino and STM32. HDL and FPGA devices are also worth to be familiar with.",
+        styles: {
+            span: 3,
+            text_color: "Lavender"
+        },
         icons: {
             path: "Embedded",
             name: ["STM32", "IntelFPGA", "Arduino"],
@@ -34,6 +46,10 @@ const tools = [
         field: "Linux administration",
         description:
             "I'm currently settled on Arch Linux. Many years of distro hopping have helped me to acquaint myself with server configuration, system management, shell scripting, networking, etc.",
+        styles: {
+            span: 4,
+            text_color: "Green"
+        },
         icons: {
             path: "Linux-administration",
             name: ["Linux", "Debian", "Alpine", "Bash"],
@@ -44,6 +60,10 @@ const tools = [
         field: "Database",
         description:
             "MongoDB for small projects with unstructured data, and PostgreSQL or any SQL database for more complex and structured systems.",
+        styles: {
+            span: 3,
+            text_color: "Blue"
+        },
         icons: {
             path: "Database",
             name: ["MongoDB", "PostgreSQL"],
@@ -54,6 +74,10 @@ const tools = [
         field: "Hosting and deployment",
         description:
             "Every project will be containerized using Docker and then deployed to any Cloud computing platform such as Google Cloud and AWS. Along with Linux administration skills and SSH, I can configure the hosting instance as desired.",
+        styles: {
+            span: 5,
+            text_color: "Yellow"
+        },
         icons: {
             path: "Hosting-and-deployment",
             name: ["Docker", "GoogleCloud", "AWS", "SSH"],
@@ -64,6 +88,10 @@ const tools = [
         field: "Miscellaneous",
         description:
             "A version control system is an essential utility, I'm using the most popular ones, Git and GitHub. Neovim is my favorite text editor because of its navigation scheme and its lightweight, customizable, and expandable.",
+        styles: {
+            span: 5,
+            text_color: "Pink"
+        },
         icons: {
             path: "Miscellaneous",
             name: ["Git", "Github", "Neovim"],
