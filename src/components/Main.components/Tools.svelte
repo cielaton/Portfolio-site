@@ -32,7 +32,7 @@
             <!--Can use the styles index directly because the map method in the script
             mapped the styles at the same index as the tool's field-->
             <div
-                    class={"p-10 lg:p-7 flex flex-col gap-5 bg-Base rounded-lg " + toolSectionSpan[index]}
+                    class={"p-7 flex flex-col gap-5 bg-Base rounded-lg " + toolSectionSpan[index]}
             >
                 <h3
                         class={"leading-none font-semibold text-2xl " + toolSectionTextColor[index]}
@@ -41,12 +41,12 @@
                 </h3>
                 <p class="text-base md:text-lg">{tool.description}</p>
                 <div
-                        class={"relative flex items-center max-w-full justify-between flex-wrap lg:flex-nowrap " +
+                        class={"self-center mt-auto flex items-center max-w-full justify-between flex-wrap lg:flex-nowrap " +
             (tool.icons.name.length <= 4
               ? tool.icons.name.length <= 2
-                ? "px-20 md:px-44 lg:px-14 xl:px-28"
-                : "px-2 md:px-20 lg:px-0 xl:px-20"
-              : " gap-y-3 px-8 md:px-20 lg:px-0 xl:px-20")}
+                ? "w-1/2 lg:w-2/3 xl:w-3/5"
+                : "w-full sm:w-2/3 md:w-3/5 lg:w-full 2xl:w-10/12"
+              : "gap-y-2 w-full sm:w-2/3 md:w-3/5 lg:w-full 2xl:w-10/12")}
                 >
                     {#each tool.icons.name as iconName (iconName)}
                         <img
