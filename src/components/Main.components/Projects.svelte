@@ -33,28 +33,34 @@
         activeTabId = tabValue;
     };
 
-    //animated indicator
+    //Animated indicator
 
     // The TailwindCss "transition" does not know how to transit the background horizontally
     // between component if you only specify the background color, thus a distinct component
     // is a proper solution for this task.
-    onMount(() => {
-            let tabs = document.querySelectorAll(".tab");
-            let indicator = document.querySelector("#indicator");
 
-            indicator.style.width = tabs[0].getBoundingClientRect().width + "px";
-            indicator.style.height = tabs[0].getBoundingClientRect().height + "px";
-            indicator.style.left = tabs[0].getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left + "px"
+    let tabs, indicator;
 
-            tabs.forEach((tab) => {
-                tab.addEventListener("click", () => {
-                    indicator.style.left = tab.getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left + "px"
-                })
+    const updateTabIndicator = (tabs, indicator) => {
+        indicator.style.width = tabs[0].getBoundingClientRect().width + "px";
+        indicator.style.height = tabs[0].getBoundingClientRect().height + "px";
+        indicator.style.left = tabs[0].getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left + "px"
+
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                indicator.style.left = tab.getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left + "px"
             })
+        })
+    }
+    onMount(() => {
+            tabs = document.querySelectorAll(".tab");
+            indicator = document.querySelector("#indicator");
+            updateTabIndicator(tabs, indicator);
         }
     )
-
 </script>
+
+<svelte:window on:resize={() => { updateTabIndicator(tabs, indicator)}}/>
 
 <section class="flex flex-col gap-10 pt-20 md:pt-32 lg:pt-40" id="Projects">
     <h2
@@ -83,7 +89,8 @@
             {/each}
         </Tab.Head>
         {#each projects as projectType, projectTypeIndex}
-            <Tab.Content {activeTabId} class="flex flex-col md:grid md:grid-cols-2 gap-8 transition-all" id={projectTypeIndex}>
+            <Tab.Content {activeTabId} class="flex flex-col md:grid md:grid-cols-2 gap-8 transition-all"
+                         id={projectTypeIndex}>
                 {#each projectType.list as project, projectIndex}
                     <div class="flex flex-col 2xl:flex-row gap-5 bg-Base rounded-xl p-5">
                         <img class="object-cover 2xl:w-[calc(100vw/6)] aspect-[6/3] 2xl:aspect-[4/3] rounded-lg"
