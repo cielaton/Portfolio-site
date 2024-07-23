@@ -1,10 +1,9 @@
 <script>
-    import {getContext} from "svelte";
 </script>
 
 <section
         id="Introduction"
-        class="grid grid-cols-1 lg:grid-cols-2 gap-20 h-[calc(100vh-6rem)]"
+        class="flex flex-col center lg:grid lg:grid-cols-2 h-[calc(100vh-6rem)]"
 >
     <div
             class="flex flex-col gap-5 text-center lg:justify-center lg:text-left mt-10 lg:mt-0"
@@ -37,9 +36,11 @@
             </div>
         </div>
     </div>
-    <img
-            class="h-3/6 md:h-4/6 w-auto justify-self-center self-start lg:self-center"
-            alt="Introduction illustration"
-            src="assets/Main/Introduction/Data Maintenance.png"
-    />
+    <div class="grow flex justify-center items-center">
+        <img
+                class="w-5/6 md:w-4/6"
+                alt="Introduction illustration"
+                src="assets/Main/Introduction/Data Maintenance.png"
+        />
+    </div>
 </section>
