@@ -14,15 +14,15 @@
 
 <section
         id="Tools"
-        class="flex flex-col gap-5 md:gap-10 pt-5 lg:pt-20"
+        class="flex flex-col gap-5 md:gap-10 pt-10 lg:pt-32"
 >
-    <div id="Heading" class="flex gap-4 lg:gap-5 items-center">
+    <div id="Heading" class="flex flex-col gap-4 lg:gap-5">
         <div
-                class="bg-Teal rounded-lg relative p-2 text-Base leading-none text-lg lg:text-2xl lg:leading-none"
+                class="bg-Teal animate-[spin_2.5s_linear_infinite] mx-auto rounded-full p-3 lg:p-4 w-fit text-Base leading-none text-lg lg:text-3xl lg:leading-none"
         >
             <i class="ri-settings-5-fill"></i>
         </div>
-        <h2 class="font-semibold text-2xl md:text-4xl lg:text-5xl">
+        <h2 class="font-semibold text-center text-3xl md:text-4xl lg:text-5xl">
             Favourite development tools
         </h2>
     </div>
