@@ -33,7 +33,7 @@
             <div class="place-self-center relative lg:mr-auto grid grid-cols-2 gap-6 mt-5 md:mt-10 lg:my-0">
                 {#each positions as position}
                     <div id="position"
-                         class={"px-6 py-5 rounded-lg shadow-[0_5px_100px_-5px_rgba(0,0,0,0.25)] " + position.color + " " + position.shadowColor}>
+                         class={"px-6 py-5 rounded-lg shadow-[0_5px_100px_-10px_rgba(0,0,0,0.25)] lg:shadow-[0_5px_100px_-5px_rgba(0,0,0,0.25)] " + position.color + " " + position.shadowColor}>
                         <p class="leading-none text-base md:text-lg xl:text-xl text-center font-medium text-Base">{position.role}</p>
                     </div>
                 {/each}
