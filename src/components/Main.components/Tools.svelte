@@ -1,13 +1,9 @@
 <script>
     import tools from "../../data/tools/tools.js";
-    import {beforeUpdate} from "svelte";
 
-    let toolSectionSpan = [], toolSectionTextColor = [];
-    beforeUpdate(() => {
-        tools.forEach((tool) => {
-            toolSectionSpan.push("col-span-" + tool.styles.span)
-            toolSectionTextColor.push('text-' + tool.styles.text_color);
-        })
+    // Dynamic styles for column span and text color
+    const toolSectionStyles = tools.map((tool) => {
+        return {span: "col-span-" + tool.styles.span, text_color: "text-" + tool.styles.text_color}
     })
     const iconsPath = "assets/Main/Tools";
 </script>
@@ -32,10 +28,10 @@
             <!--Can use the styles index directly because the map method in the script
             mapped the styles at the same index as the tool's field-->
             <div
-                    class={"p-7 flex flex-col gap-5 bg-Base rounded-lg " + toolSectionSpan[index]}
+                    class={"p-7 flex flex-col gap-5 bg-Base rounded-lg " + toolSectionStyles[index].span}
             >
                 <h3
-                        class={"leading-none font-semibold text-2xl " + toolSectionTextColor[index]}
+                        class={"leading-none font-semibold text-2xl " + toolSectionStyles[index].text_color}
                 >
                     {tool.field}
                 </h3>
