@@ -71,11 +71,11 @@
     </h2>
     <Tab.Root class="flex flex-col gap-10" id="Body">
         <Tab.Head class="relative w-full md:w-2/3 lg:w-1/3 flex items-center mx-auto px-2 py-2 bg-Surface0 rounded-lg">
-            <div class="absolute transition-all duration-200 my-auto mx-2 z-[1] top-0 left-0 bottom-0 rounded-lg bg-Mantle"
+            <div class="absolute transition-all duration-200 my-auto mx-2 top-0 left-0 bottom-0 rounded-lg bg-Mantle"
                  id="indicator"/>
             {#each projects as projectType, index}
                 <Tab.HeadItem
-                        class={"tab relative z-[10] w-full flex gap-3 py-2 justify-center rounded-lg text-sm md:text-base " + (activeTabId === index ? "text-Teal" : "")}
+                        class={"tab relative w-full flex gap-3 py-2 justify-center rounded-lg text-sm md:text-base " + (activeTabId === index ? "text-Teal" : "")}
                         id={index}
                         on:click={() => handleClick(index)}>
                     {#if projectType.name === "Personal work"}
