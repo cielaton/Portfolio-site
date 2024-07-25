@@ -1,48 +1,29 @@
-<<<<<<< HEAD
+# About
+This is my portfolio site built with Svelte and TailwindCSS, which has some dependencies and does not use any UI library.
 
-# create-svelte
-
-Everything you need to build a Svelte project, powered
-by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
+---
+## How to run
+Clone this repository:
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+git clone https://github.com/cielaton/Portfolio-site.git
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a
-development server:
-
+Navigate to the project directory, then install the dependencies:
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+yarn install
 ```
-
-## Building
-
-To create a production version of your app:
-
+Run the project:
 ```bash
-npm run build
+yarn run dev
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target
-> environment.
-> =======
-
-# Portfolio-site
-
-> > > > > > > 367c0f497f90c8bca031cd237fad01091e88e5e4
+## Project structure
+- `src`: Source code of the application.
+    - `components`: The page components of the root route.
+        - `Header`, `Main`, `Footer`: Self explanation.
+        - `Main.components`: Components of Main.
+            - `Introduction`: Introduction page.
+            - `Tools`: My favourite tools to utilize in various fields.
+            - `Projects`: A hall of my works.
+            - `About me`: How i describe myself.
+            - `Projects.components`: Components that made up `Projects` page.
+    - `routes`: Handles routing mechanism in Svelte.
+    - `lib`: Store external library (optional).
