@@ -4,7 +4,7 @@
     import {projects} from "../../data/projects/projects.js";
 
     let activeTabId = 0;
-    const imagePath = "assets/Main/Projects";
+    const imagePath = "assets/icons/Projects";
     const colors = ["bg-Red", "bg-Green", "bg-Blue", "bg-Pink", "bg-Yellow", "bg-Teal", "bg-Peach"];
     //Return the exact structure of project object, only with the colors property
     const technologyColors = projects.map((projectName) => {

@@ -40,7 +40,7 @@
         <img
                 class="w-5/6 md:w-4/6"
                 alt="Introduction illustration"
-                src="assets/Main/Introduction/Data Maintenance.png"
+                src="assets/images/Main/Introduction/Data Maintenance.png"
         />
     </div>
 </section>

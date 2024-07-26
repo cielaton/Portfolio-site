@@ -5,7 +5,7 @@
     const toolSectionStyles = tools.map((tool) => {
         return {span: "col-span-" + tool.styles.span, text_color: "text-" + tool.styles.text_color}
     })
-    const iconsPath = "assets/Main/Tools";
+    const iconsPath = "assets/images/Main/Tools";
 </script>
 
 <section

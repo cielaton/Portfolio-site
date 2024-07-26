@@ -19,7 +19,7 @@
 <!--The flex style here is just to center the div inside it since my-auto is not working-->
 <section id="About me" class="min-h-screen flex items-center my-10 lg:my-40">
     <div class="flex flex-col lg:grid lg:grid-cols-2 gap-10 md:gap-20">
-        <img class="hidden lg:inline place-self-center lg:w-[calc(100vw/3)] xl:w-[calc(100vw/3.5)] 2xl:w-[calc(100vw/4)]" src="assets/Main/About_me/illustration.png"
+        <img class="hidden lg:inline place-self-center lg:w-[calc(100vw/3)] xl:w-[calc(100vw/3.5)] 2xl:w-[calc(100vw/4)]" src="assets/images/Main/About_me/illustration.png"
              alt="illustration"/>
         <div class="flex flex-col gap-5">
             <h1 class="leading-none text-6xl font-bold">About <span class="text-Teal">Me</span></h1>
@@ -39,7 +39,7 @@
                 {/each}
             </div>
         </div>
-        <img class="lg:hidden self-center h-[calc(100vh/4)] md:h-[calc(100vh/3)]" src="assets/Main/About_me/illustration.png"
+        <img class="lg:hidden self-center h-[calc(100vh/4)] md:h-[calc(100vh/3)]" src="assets/images/Main/About_me/illustration.png"
              alt="illustration"/>
     </div>
 </section>
