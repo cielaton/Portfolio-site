@@ -7,13 +7,13 @@ Clone this repository:
 ```bash
 git clone https://github.com/cielaton/Portfolio-site.git
 ```
-Navigate to the project directory, then install the dependencies:
+Navigate to the project directory, then install the dependencies using pnpm (or any package manager you prefer):
 ```bash
-yarn install
+pnpm install 
 ```
 Run the project:
 ```bash
-yarn run dev
+pnpm dev
 ```
 ## Project structure
 - `src`: Source code of the application.
@@ -27,3 +27,6 @@ yarn run dev
             - `Projects.components`: Components that made up `Projects` page.
     - `routes`: Handles routing mechanism in Svelte.
     - `lib`: Store external library (optional).
+- `static`: Store static elements
+  - `assets`: Fonts, icons, images.
+  - `particles_js`: Particles.js configuration files.
