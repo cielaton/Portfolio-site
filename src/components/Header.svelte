@@ -40,14 +40,14 @@
             <i class="ri-github-fill text-4xl"></i>
         </a>
         <a
-                href="https://www.linkedin.com/in/v%C3%B5-tu%E1%BA%A5n-ki%E1%BB%87t-16311a290/"
+                href="https://www.linkedin.com/in/võ-tuấn-kiệt/"
                 target="_blank"
                 class="hidden sm:inline"
         >
             <i class="ri-linkedin-box-fill text-4xl"></i>
         </a>
         <a
-                href="https://www.linkedin.com/in/v%C3%B5-tu%E1%BA%A5n-ki%E1%BB%87t-16311a290/"
+                href="mailto:vtuankiet17@gmail.com"
                 target="_blank"
                 class="relative px-5 py-2 group rounded-lg bg-white overflow-hidden"
         >
