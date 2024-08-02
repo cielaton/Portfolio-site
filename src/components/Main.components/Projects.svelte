@@ -1,6 +1,8 @@
 <script>
     import * as Tab from "./Projects.components/Tab"
     import {getContext, onMount} from "svelte";
+    import TabHead from "./Projects.components/TabHead.svelte";
+    import TabContent from "./Projects.components/TabContent.svelte";
 
     // get the personal and team project data from context
     const personalProjects = getContext("personalProjects")
@@ -89,50 +91,7 @@
         Curious to see my <span class="text-Teal">creations</span>?
     </h2>
     <Tab.Root class="flex flex-col gap-10" id="Body">
-        <Tab.Head class="relative w-full md:w-2/3 lg:w-1/3 flex items-center mx-auto px-2 py-2 bg-Surface0 rounded-lg">
-            <div class="absolute transition-all duration-200 my-auto mx-2 top-0 left-0 bottom-0 rounded-lg bg-Mantle"
-                 id="indicator"/>
-            {#each projects as projectType, index}
-                <Tab.HeadItem
-                        class={"tab relative w-full flex gap-3 py-2 justify-center rounded-lg text-sm md:text-base " + (activeTabId === index ? "text-Teal" : "")}
-                        id={index}
-                        on:click={() => handleClick(index)}>
-                    {#if projectType.name === "Personal work"}
-                        <i class="ri-user-3-fill"></i>
-                    {:else if projectType.name === "Team projects"}
-                        <i class="ri-team-fill"></i>
-                    {/if}
-                    <p class="">{projectType.name}</p>
-                </Tab.HeadItem
-                >
-            {/each}
-        </Tab.Head>
-        {#each projects as projectType, projectTypeIndex}
-            <Tab.Content {activeTabId} class="flex flex-col md:grid md:grid-cols-2 gap-8 transition-all"
-                         id={projectTypeIndex}>
-                {#each projectType.projectList as project, projectIndex}
-                    <div class="flex flex-col 2xl:flex-row gap-5 bg-Base rounded-xl p-5">
-                        <img class="object-cover 2xl:w-[calc(100vw/6)] aspect-[6/3] 2xl:aspect-[4/3] rounded-lg"
-                             src={`${imagePath}/${projectType.imageFolder}/${project.imageName}.png`}
-                             alt="project"/>
-                        <div class="flex h-full flex-col gap-2">
-                            <a href={project.link} target="_blank">
-                                <h3 class="text-xl lg:text-2xl leading-none font-semibold">{project.projectName}
-                                    <i class="ri-external-link-fill"> </i>
-                                </h3>
-                            </a>
-                            <p class="text-sm lg:text-base">{project.projectDescription}</p>
-                            <div class="mt-2 flex gap-3">
-                                {#each project.technologies as technology, technologyIndex}
-                                    <!--accessTechnologyColors with the root index (projects index), then the project inside the projectList property, and finally, the color property-->
-                                    <p class={"rounded-lg text-sm text-Base px-2 py-[2px] " + technologyColors[projectTypeIndex].projectList[projectIndex].colors[technologyIndex]}>{technology}</p>
-                                {/each}
-                            </div>
-                        </div>
-                    </div>
-                {/each}
-            </Tab.Content>
-        {/each}
-
+        <TabHead {projects} {activeTabId} {handleClick}/>
+        <TabContent {projects} {activeTabId} {imagePath} {technologyColors}/>
     </Tab.Root>
 </section>
