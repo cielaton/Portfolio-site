@@ -1,22 +1,39 @@
 <script>
+    import * as Tab from "./Projects.components/Tab"
     import {getContext, onMount} from "svelte";
-    import {projects} from "../../data/projects/projects.js";
 
+    // get the personal and team project data from context
     const personalProjects = getContext("personalProjects")
     const teamProjects = getContext("teamProjects")
+    const projects = [
+        {
+            name: "Personal works",
+            imageFolder: "personal_work",
+            projectList: personalProjects
+        },
+        {
+            name: "Team projects",
+            imageFolder: "team_projects",
+            projectList: teamProjects
+        }
+    ]
+
 
     let activeTabId = 0;
-    const imagePath = "assets/icons/Projects";
+
+    const imagePath = "assets/images/Main/Projects";
+
+    // Technologies background color randomizer
     const colors = ["bg-Red", "bg-Green", "bg-Blue", "bg-Pink", "bg-Yellow", "bg-Teal", "bg-Peach"];
-    //Return the exact structure of project object, only with the colors property
-    const technologyColors = projects.map((projectName) => {
+    // Return the exact structure of project object, only with the colors property
+    const technologyColors = projects.map((projectType) => {
         return {
-            name: projectName,
-            list: projectName.list.map((project) => {
+            name: projectType,
+            projectList: (projectType.projectList === null) ? null : projectType.projectList.map((project) => {
                 // This is for resetting the temp color array for each project
                 let tempColors = [...colors];
                 return {
-                    name: project.name,
+                    projectName: project.projectName,
                     colors: project.technologies.map(() => {
                         //Reset the temp colors value after it's empty, cannot reset it outside the map method since it have to wait for the whole proj
                         const randomNumber = Math.floor(Math.random() * tempColors.length);
@@ -93,22 +110,22 @@
         {#each projects as projectType, projectTypeIndex}
             <Tab.Content {activeTabId} class="flex flex-col md:grid md:grid-cols-2 gap-8 transition-all"
                          id={projectTypeIndex}>
-                {#each projectType.list as project, projectIndex}
+                {#each projectType.projectList as project, projectIndex}
                     <div class="flex flex-col 2xl:flex-row gap-5 bg-Base rounded-xl p-5">
                         <img class="object-cover 2xl:w-[calc(100vw/6)] aspect-[6/3] 2xl:aspect-[4/3] rounded-lg"
-                             src={`${imagePath}/${projectType.imageFolder}/${project.image_name}.png`}
+                             src={`${imagePath}/${projectType.imageFolder}/${project.imageName}.png`}
                              alt="project"/>
                         <div class="flex h-full flex-col gap-2">
                             <a href={project.link} target="_blank">
-                                <h3 class="text-xl lg:text-2xl leading-none font-semibold">{project.name}
+                                <h3 class="text-xl lg:text-2xl leading-none font-semibold">{project.projectName}
                                     <i class="ri-external-link-fill"> </i>
                                 </h3>
                             </a>
-                            <p class="text-sm lg:text-base">{project.description}</p>
+                            <p class="text-sm lg:text-base">{project.projectDescription}</p>
                             <div class="mt-2 flex gap-3">
                                 {#each project.technologies as technology, technologyIndex}
-                                    <!--accessTechnologyColors with the root index (projects index), then the project inside the list property, and finally, the color property-->
-                                    <p class={"rounded-lg text-sm text-Base px-2 py-[2px] " + technologyColors[projectTypeIndex].list[projectIndex].colors[technologyIndex]}>{technology}</p>
+                                    <!--accessTechnologyColors with the root index (projects index), then the project inside the projectList property, and finally, the color property-->
+                                    <p class={"rounded-lg text-sm text-Base px-2 py-[2px] " + technologyColors[projectTypeIndex].projectList[projectIndex].colors[technologyIndex]}>{technology}</p>
                                 {/each}
                             </div>
                         </div>
