@@ -1,7 +1,9 @@
 <script>
-    import {onMount} from "svelte";
-    import * as Tab from "./Projects.components/Tab";
+    import {getContext, onMount} from "svelte";
     import {projects} from "../../data/projects/projects.js";
+
+    const personalProjects = getContext("personalProjects")
+    const teamProjects = getContext("teamProjects")
 
     let activeTabId = 0;
     const imagePath = "assets/icons/Projects";
