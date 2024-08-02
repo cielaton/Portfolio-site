@@ -1,10 +1,14 @@
 <script>
-    import tools from "../../data/tools/tools.js";
+    import {getContext} from "svelte";
+
+    // Get the developmmentTools object
+    const developmentTools = getContext("developmentTools")
 
     // Dynamic styles for column span and text color
-    const toolSectionStyles = tools.map((tool) => {
-        return {span: "col-span-" + tool.styles.span, text_color: "text-" + tool.styles.text_color}
+    const toolSectionStyles = developmentTools.map((tool) => {
+        return {span: "col-span-" + tool.style.span, text_color: "text-" + tool.style.text_color}
     })
+
     const iconsPath = "assets/images/Main/Tools";
 </script>
 
@@ -24,7 +28,7 @@
     </div>
 
     <div id="Body" class="flex flex-col lg:grid lg:grid-cols-10 gap-7 lg:gap-5">
-        {#each tools as tool, index}
+        {#each developmentTools as tool, index}
             <!--Can use the styles index directly because the map method in the script
             mapped the styles at the same index as the tool's field-->
             <div

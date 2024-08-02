@@ -9,5 +9,5 @@
     <Introduction/>
     <Tools/>
     <Projects/>
-    <AboutMe />
+    <AboutMe/>
 </main>
