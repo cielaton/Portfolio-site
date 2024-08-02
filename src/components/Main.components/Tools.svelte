@@ -6,7 +6,7 @@
 
     // Dynamic styles for column span and text color
     const toolSectionStyles = developmentTools.map((tool) => {
-        return {span: "col-span-" + tool.style.span, text_color: "text-" + tool.style.text_color}
+        return {span: "col-span-" + tool.style.span, text_color: "text-" + tool.style.textColor}
     })
 
     const iconsPath = "assets/images/Main/Tools";
