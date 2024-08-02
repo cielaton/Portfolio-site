@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
     content: ["./src/**/*.{html,js,svelte,ts}"],
-    safelist: ["col-span-1", "col-span-2", "col-span-3", "col-span-4", "col-span-5", "col-span-6", "col-span-7", "col-span-8", "col-span-9", "col-span-10", "text-Teal", "text-Red", "text-Lavender", "text-Green", "text-Blue", "text-Yellow", "text-Pink"],
+    safelist: ["col-span-1", "col-span-2", "col-span-3", "col-span-4", "col-span-5", "col-span-6", "col-span-7", "col-span-8", "col-span-9", "col-span-10", "text-Teal", "text-Red", "text-Lavender", "text-Green", "text-Blue", "text-Yellow", "text-Pink", "bg-Red", "bg-Green", "bg-Blue", "bg-Pink", "bg-Yellow", "bg-Teal", "bg-Peach"],
     theme: {
         extend: {
             colors: {
