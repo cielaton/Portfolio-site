@@ -1,6 +1,6 @@
 <script>
-    import * as Tab from "./Projects.components/Tab"
     import {getContext, onMount} from "svelte";
+    import * as Tab from "./Projects.components/Tab"
     import TabHead from "./Projects.components/TabHead.svelte";
     import TabContent from "./Projects.components/TabContent.svelte";
 
@@ -73,15 +73,30 @@
             })
         })
     }
+    // To check on the resize event
+    let previousHeight;
+
     onMount(() => {
+            // Initialize the height value
+            previousHeight = window.innerHeight;
+
             tabs = document.querySelectorAll(".tab");
             indicator = document.querySelector("#indicator");
             updateTabIndicator(tabs, indicator);
         }
     )
+
 </script>
 
-<svelte:window on:resize={() => { updateTabIndicator(tabs, indicator)}}/>
+<!--Resize the tab indicator on width change-->
+<svelte:window on:resize={() => {
+    if (window.innerHeight !== previousHeight) {
+        previousHeight = window.innerHeight
+        return
+    }
+    updateTabIndicator(tabs, indicator)
+    }
+}/>
 
 <section class="flex flex-col gap-10 pt-20 md:pt-32 lg:pt-40" id="Projects">
     <h2
@@ -90,8 +105,8 @@
     >
         Curious to see my <span class="text-Teal">creations</span>?
     </h2>
-    <Tab.Root class="flex flex-col gap-10" id="Body">
-        <TabHead {projects} {activeTabId} {handleClick}/>
-        <TabContent {projects} {activeTabId} {imagePath} {technologyColors}/>
+    <Tab.Root class="flex flex-col min-h-[calc(100svh/2)] gap-10" id="Body">
+        <TabHead {activeTabId} {handleClick} {projects}/>
+        <TabContent {activeTabId} {imagePath} {projects} {technologyColors}/>
     </Tab.Root>
 </section>
