@@ -7,14 +7,15 @@
 {#each projects as projectType, projectTypeIndex}
     {#if projectType.projectList === null}
         <Content {activeTabId}
-                 class="flex flex-col gap-10 min-h-[calc(100svh/3)] md:min-h-[calc(100svh/2)] justify-center items-center"
+                 class="flex flex-col gap-10 my-auto items-center"
                  id={projectTypeIndex}>
-            <img src="assets/images/Main/Projects/nothing.png" alt="nothing" class="w-1/5 lg:w-1/6">
-            <h2 class="text-xl lg:text-2xl font-semibold opacity-50">Nothing yet</h2>
+            <img src="assets/images/Main/Projects/nothing.png" alt="nothing"
+                 class="w-28 md:w-32 xl:w-40">
+            <h2 class="text-lg md:text-xl xl:text-2xl font-semibold opacity-50">Nothing yet</h2>
         </Content>
     {:else}
         <Content {activeTabId}
-                 class="flex flex-col min-h-[calc(100svh/3)] md:min-h-[calc(100svh/2)] md:grid md:grid-cols-2 gap-8 transition-all"
+                 class="flex flex-col md:grid md:grid-cols-2 gap-8 transition-all"
                  id={projectTypeIndex}>
             {#each projectType.projectList as project, projectIndex}
                 <div class="flex flex-col 2xl:flex-row gap-5 bg-Base rounded-xl p-5">

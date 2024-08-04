@@ -90,7 +90,7 @@
     >
         Curious to see my <span class="text-Teal">creations</span>?
     </h2>
-    <Tab.Root class="flex flex-col gap-10" id="Body">
+    <Tab.Root class="flex flex-col min-h-[calc(100svh/2)] gap-10" id="Body">
         <TabHead {projects} {activeTabId} {handleClick}/>
         <TabContent {projects} {activeTabId} {imagePath} {technologyColors}/>
     </Tab.Root>
